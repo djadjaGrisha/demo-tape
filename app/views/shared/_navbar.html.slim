@@ -1,0 +1,17 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container
+    = link_to 'ConvertKit', root_path, class: 'navbar-brand', remote: true
+    = content_tag :button, class: 'navbar-toggler', type: 'button',
+                     aria: { controls: 'navbarSupportedContent', expanded: 'false', label: 'Toggle navigation' },
+                     data: { target: '#navbarSupportedContent', toggle: 'collapse' } do
+      = tag :span, class: 'navbar-toggler-icon'
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+      /   li.nav-item.active
+      /     = link_to root_path, class: 'nav-link', remote: true do
+      /       | Home
+      /       span.sr-only
+      /         | (current)
+      .form-inline.my-2.my-lg-0
+        = text_field_tag :artist_name, nil, class: 'form-control mr-sm-2', placeholder: 'Artist name'
+        button#search-btn.btn.btn-outline-success.my-2.my-sm-0 Search

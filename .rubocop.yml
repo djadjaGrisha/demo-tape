@@ -1,0 +1,77 @@
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.3.0
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - Gemfile
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'config/deploy.rb'
+    - 'app/serializers/chat_message_serializer.rb'
+    - "config/environments/production.rb"
+    - "config/environments/development.rb"
+    - "app/controllers/api/v1/users/registrations_controller.rb"
+    - 'config/deploy/staging.rb'
+    - 'config/unicorn.rb'
+    - 'bin/spring'
+    - 'config/puma.rb'
+    - 'spec/support/devise.rb'
+    - 'socket-io-server/**/*'
+    - 'Capfile'
+    - 'spec/factories/*'
+
+Metrics/LineLength:
+  Max: 130
+
+Metrics/BlockLength:
+  Max: 32
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/ModuleLength:
+  Max: 200
+  Exclude:
+    - "config/routes.rb"
+
+Style/GuardClause:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/AbcSize:
+  Max: 50
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/AccessorMethodName:
+  Exclude:
+    - "**/*_datatable.rb"
+
+Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+    - "config/routes.rb"
