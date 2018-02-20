@@ -1,6 +1,7 @@
 $('#artist-info').html('<%= j(render 'home/artist_info') %>');
 $('#embed').html('<%= j(artist_embed(@track)) %>');
 swal({
-    title: "<%= @err_msg.presence || 'Message was sent' %>",
+    title: "<%= @err_msg.presence || 'Message sent successfully' %>",
     icon: "<%= @err_msg.blank? ? 'success' : 'error' %>"
 });
+$('.preloader').hide();

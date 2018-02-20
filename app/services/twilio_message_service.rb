@@ -1,19 +1,23 @@
-class TwilioMessageService < BaseService
-  attr_reader :client, :msg_body, :recipient_number
+class TwilioMessageService
+  prepend SimpleCommand
+  attr_reader :client, :msg, :from, :to
 
   def initialize(**args)
     @client = Twilio::REST::Client.new(ENV['TWILIO_USERNAME'], ENV['TWILIO_PASSWORD'])
-    @msg_body = args[:msg_body]
-    @recipient_number = args[:recipient_number]
+    @msg = args[:msg]
+    @from = args[:from] || ENV['SENDER_PHONE_NUMBER']
+    @to = args[:to]
   end
 
-  def execute
+  def call
     client.api.account.messages.create(
-      from: ENV['SENDER_PHONE_NUMBER'],
-      to: recipient_number,
-      body: msg_body
+      from: from,
+      to: to,
+      body: msg
     )
   rescue StandardError => e
-    e
+    Rails.logger.error e.message
+    errors.add(:message, 'Can\'t send a message. Please try again')
+    nil
   end
 end

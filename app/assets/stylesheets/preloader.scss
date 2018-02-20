@@ -1,0 +1,56 @@
+.preloader {
+  display: none;
+  width: 300px;
+  height: 380px;
+  color: #fff;
+  margin: 150px 0 10px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  .line {
+    width: 1px;
+    height: 12px;
+    background: #fff;
+    margin: 0 1px;
+    display: inline-block;
+    animation: opacity-1 1000ms infinite ease-in-out;
+  }
+  $animations: 800ms, 600ms, 400ms, 200ms, 1000ms, 200ms, 400ms, 600ms, 800ms;
+  @for $i from 1 through length($animations) {
+    .line-#{$i} {
+      animation-delay: nth($animations, $i)
+    }
+  }
+  div {
+    margin: 5px 0;
+  }
+}
+
+@keyframes opacity-1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity-2 {
+  0% {
+    opacity: 1;
+    height: 15px;
+  }
+  50% {
+    opacity: 0;
+    height: 12px;
+  }
+  100% {
+    opacity: 1;
+    height: 15px;
+  }
+}

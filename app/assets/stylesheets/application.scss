@@ -1,1 +1,62 @@
 @import "bootstrap";
+@import "preloader";
+@import "variables";
+
+//init-colors
+$green: #28a745;
+$navbar-bg: $spotify-nav-bg;
+$navbar-invert: $spotify-invert;
+$navbar-link-invert: $spotify-green;
+$navbar-link-hover: $green;
+
+$navbar-btn-color: $spotify-green;
+
+$main-bg: $spotify-bg;
+$main-invert: $spotify-invert;
+$main-subtext-invert: $spotify-subtext-invert;
+$main-link-invert: $spotify-green;
+$main-link-hover: $green;
+
+.navbar {
+  background-color: $navbar-bg;
+  color: $navbar-invert;
+  .navbar-brand {
+    color: $navbar-link-invert;
+    &:hover {
+      color: $navbar-link-hover;
+    }
+  }
+  .form-control {
+    color: $navbar-invert;
+    background-color: transparent;
+    &:focus {
+      border-color: $navbar-link-invert;
+    }
+  }
+  .btn-outline-success {
+    color: $navbar-btn-color;
+    border-color: $navbar-btn-color;
+    &:hover {
+      color: $navbar-invert;
+      background-color: $navbar-btn-color;
+      border-color: $navbar-link-hover;
+    }
+  }
+}
+.content-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 56px);
+  background-color: $main-bg;
+  color: $main-invert;
+}
+#artist-info {
+  h5 {
+    a {
+      color: $main-link-invert;
+      &:hover {
+        color: $main-link-hover;
+        text-decoration: none;
+      }
+    }
+  }
+}

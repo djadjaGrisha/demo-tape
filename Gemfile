@@ -19,6 +19,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 # gem 'pundit'
 # gem 'rails-observers'
+gem 'simple_command'
 gem 'unicorn'
 
 #=== UI =======================================================================

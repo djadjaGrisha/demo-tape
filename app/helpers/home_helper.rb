@@ -5,13 +5,15 @@ module HomeHelper
       concat image_tag(artist_img(artist), class: 'align-self-center mr-3')
       concat artist_info(artist)
     end
-  rescue StandardError
+  rescue StandardError => e
+    Rails.logger.error e.message
     nil
   end
 
   def artist_embed(track)
     ActiveSupport::SafeBuffer.new(artist_by_track(track).embed)
-  rescue StandardError
+  rescue StandardError => e
+    Rails.logger.error e.message
     nil
   end
 
@@ -25,9 +27,5 @@ module HomeHelper
       concat content_tag(:p, "Genres: #{artist.genres.join(', ')}")
       concat content_tag(:p, "Popularity: #{artist.popularity}")
     end
-  end
-
-  def artist_by_track(track)
-    track.album.artists.first
   end
 end

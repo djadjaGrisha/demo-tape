@@ -1,15 +1,14 @@
-class SpotifyTrackService
+class SpotifyTrackMessageService
   prepend SimpleCommand
-  attr_reader :query, :country
+  include SpotifyHelper
+  attr_reader :track
 
   def initialize(**args)
-    @query = args[:query]
-    @country = args[:country] || :US
+    @track = args[:track]
   end
 
   def call
-    artist = RSpotify::Artist.search(query).first
-    artist.top_tracks(country).first
+    "#{artist_by_track(@track)}'s top track: #{@track.name}"
   rescue StandardError => e
     Rails.logger.error e.message
     errors.add(:spotify, 'Something went wrong. Please try again')

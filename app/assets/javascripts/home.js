@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#search-btn').click(function () {
-        const artistName = $('#artist_name').val();
+        var artistName = $('#artist_name').val();
         if(artistName) {
             swal({
                 title: "Type your phone number",
@@ -8,7 +8,8 @@ $(document).ready(function () {
                 icon: "warning",
                 buttons: true
             })
-            .then((value) => {
+            .then(function(value) {
+                $('.preloader').show();
                 send_data(artistName, value);
                 // swal(artistName, value, "success");
             });
