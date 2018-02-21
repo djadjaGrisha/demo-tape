@@ -1,27 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## A link to my deployed web app
+https://convert-kit.herokuapp.com/
 
-Things you may want to cover:
+## My thoughts about the exercise
+Intresting idea, but i'd like to be able to get a link for a song to have easy access to listen it. So, in that case probably more useful send a link to a song or a play list, maybe use some messenger bot. From other side, it could be left for future development. Particular exercise seems easy at the very beginning, but has intresting details along of implementation, probably 'cause there's no TOR or strong requirements and I was free to apply defferent logic up to me).
 
-* Ruby version
+## About how long I spent on it
+A little bit more than 10,5 hours
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Aspects of the application I would implement or improve given more time
+Of course, there should be a validation of data user inputs in the app. Storing some user data seems to me a good idea. E.g. to have some statistic data or let user to have some default phone number. As I mensioned above I'd like to have possibility to chose what I want to share whole playlist or particular song if I use the app. Also the layout looks a little bit ugly and UX isn't perfect.
 
 # ➿ Demo Tape
 
