@@ -1,5 +1,7 @@
 # README
 
+* There should be a pull request, but at the very beginning I've set up the app ('cause rails generator disallow setting up an app in not empty folder) and after add remote repository url. Now I got unrelated histories in branches. So, when I've realized a problem it was too many things done for coming back and doing them again. Right way in that case was to branch from master, clear the folder, commit changes and after that set up the new rails app.
+
 ## A link to my deployed web app
 https://convert-kit.herokuapp.com/
 
