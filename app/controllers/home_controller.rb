@@ -18,7 +18,7 @@ class HomeController < ApplicationController
   def send_msg
     message = SpotifyTrackMessageService.call(track: @track)
     @err_msg = if message.success?
-                 response = TwilioMessageService.call(msg: message.result, from: params[:phone_number])
+                 response = TwilioMessageService.call(msg: message.result, to: params[:phone_number])
                  response.errors.dig(:message, 0)
                else
                  message.errors.dig(:spotify, 0)

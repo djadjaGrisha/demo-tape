@@ -17,6 +17,16 @@ $main-subtext-invert: $spotify-subtext-invert;
 $main-link-invert: $spotify-green;
 $main-link-hover: $green;
 
+.custom-btn {
+  color: $navbar-btn-color;
+  background-color: transparent;
+  border-color: $navbar-btn-color;
+  &:hover {
+    color: $navbar-invert;
+    background-color: $navbar-btn-color;
+    border-color: $navbar-link-hover;
+  }
+}
 .navbar {
   background-color: $navbar-bg;
   color: $navbar-invert;
@@ -31,16 +41,18 @@ $main-link-hover: $green;
     background-color: transparent;
     &:focus {
       border-color: $navbar-link-invert;
+      box-shadow: 0 0 0 0.2rem rgba(30, 215, 96, 0.25);
     }
   }
   .btn-outline-success {
-    color: $navbar-btn-color;
-    border-color: $navbar-btn-color;
-    &:hover {
-      color: $navbar-invert;
-      background-color: $navbar-btn-color;
-      border-color: $navbar-link-hover;
-    }
+    @extend .custom-btn;
+    //color: $navbar-btn-color;
+    //border-color: $navbar-btn-color;
+    //&:hover {
+    //  color: $navbar-invert;
+    //  background-color: $navbar-btn-color;
+    //  border-color: $navbar-link-hover;
+    //}
   }
 }
 .content-wrapper {
@@ -52,11 +64,18 @@ $main-link-hover: $green;
 #artist-info {
   h5 {
     a {
-      color: $main-link-invert;
+      color: $main-invert;
       &:hover {
-        color: $main-link-hover;
+        color: $main-link-invert;
         text-decoration: none;
       }
     }
   }
+  p {
+    color: $main-subtext-invert;
+  }
+}
+.swal-button--confirm {
+  @extend .custom-btn;
+  border: 1px solid;
 }
