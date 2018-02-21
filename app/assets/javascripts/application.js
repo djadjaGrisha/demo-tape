@@ -16,3 +16,5 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require home
+//= require intlTelInput
+// require intl-tel-input/build/js/intlTelInput

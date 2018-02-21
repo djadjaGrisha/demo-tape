@@ -7,7 +7,7 @@ module HomeHelper
     end
   rescue StandardError => e
     Rails.logger.error e.message
-    nil
+    'No results found'
   end
 
   def artist_embed(track)

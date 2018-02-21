@@ -1,0 +1,14 @@
+production:
+  username: <%= ENV['TWILIO_USERNAME'] %>
+  password: <%= ENV['TWILIO_PASSWORD'] %>
+  sender_phone: "<%= ENV['SENDER_PHONE_NUMBER'] %>"
+
+development:
+  username: <%= ENV['TWILIO_USERNAME'] %>
+  password: <%= ENV['TWILIO_PASSWORD'] %>
+  sender_phone: "<%= ENV['SENDER_PHONE_NUMBER'] %>"
+  
+test:
+  username: <%= ENV['TWILIO_USERNAME'] %>
+  password: <%= ENV['TWILIO_PASSWORD'] %>
+  sender_phone: "<%= ENV['SENDER_PHONE_NUMBER'] %>"

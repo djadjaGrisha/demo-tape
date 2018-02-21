@@ -1,28 +1,39 @@
 $(document).ready(function () {
+    init_TelInput('#phone_number');
+    // $('#phone_number').intlTelInput();
+
     $('#search-btn').click(function () {
-        search_request();
+        show_phone_number_modal();
     });
     $('#artist_name').keyup(function (e) {
+        if(e.which == 13) {
+            show_phone_number_modal();
+        }
+    });
+
+    $('#applyPhone').click(function () {
+        search_request();
+    });
+    $('#phone_number').keyup(function (e) {
         if(e.which == 13) {
             search_request();
         }
     });
 });
 
-function search_request() {
+function show_phone_number_modal() {
     var artistName = $('#artist_name').val();
     if (artistName) {
-        swal({
-            title: "Type your phone number",
-            content: "input",
-            icon: "warning",
-            buttons: true,
-            closeModal: false
-        })
-        .then(function(value) {
-            $('.preloader').show();
-            if (value) { send_data(artistName, value); }
-        });
+        $('#phoneModal').modal('show');
+    }
+}
+
+function search_request() {
+    var artistName = $('#artist_name').val();
+    if (value_exists('#phone_number')) {
+        $('#phoneModal').modal('hide');
+        $('.preloader').show();
+        send_data(artistName, $('#phone_number').val());
     }
 }
 
@@ -37,4 +48,25 @@ function send_data(artist_name, phone_number) {
             authenticity_token: $('meta[name="csrf-token"]').attr('content')
         }
     });
+}
+
+function init_TelInput(selector) {
+    // init
+    $(selector).intlTelInput();
+
+    // on start
+    var countryOnStart = $(selector).intlTelInput("getSelectedCountryData");
+    $(selector).val('+' + countryOnStart.dialCode);
+
+    // on change
+    $(selector).on("countrychange", function (e, countryData) {
+        $(selector).val('+' + countryData.dialCode);
+    });
+}
+
+function value_exists(selector) {
+    var value = $(selector).val() || '';
+    if (!value) { return false; }
+    var dialCode = $(selector).data().plugin_intlTelInput.selectedCountryData.dialCode;
+    if ((value != dialCode) && (value != ('+' + dialCode))) { return true; }
 }

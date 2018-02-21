@@ -1,0 +1,10 @@
+#phoneModal.modal.fade aria-hidden="true" aria-labelledby="exampleModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+        h5.modal-title Type your phone number
+      .modal-body
+        = text_field_tag :phone_number, nil, class: 'form-control mr-sm-2'
+      .modal-footer
+        button.btn.btn-secondary data-dismiss="modal" type="button" Close
+        button#applyPhone.btn.btn-outline-success type="button" Confirm

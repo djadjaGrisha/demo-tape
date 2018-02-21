@@ -3,9 +3,12 @@ class TwilioMessageService
   attr_reader :client, :msg, :from, :to
 
   def initialize(**args)
-    @client = Twilio::REST::Client.new(ENV['TWILIO_USERNAME'], ENV['TWILIO_PASSWORD'])
+    @client = Twilio::REST::Client.new(
+      Rails.configuration.twilio_service['username'],
+      Rails.configuration.twilio_service['password']
+    )
     @msg = args[:msg]
-    @from = args[:from] || ENV['SENDER_PHONE_NUMBER']
+    @from = args[:from] || Rails.configuration.twilio_service['sender_phone']
     @to = args[:to]
   end
 

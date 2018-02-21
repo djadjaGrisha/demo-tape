@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "preloader";
 @import "variables";
+@import "intlTelInput";
+//@import "intl-tel-input/build/css/intlTelInput";
 
 //init-colors
 $green: #28a745;
@@ -27,6 +29,14 @@ $main-link-hover: $green;
     border-color: $navbar-link-hover;
   }
 }
+
+.green-glow {
+  &:focus {
+    border-color: $navbar-link-invert;
+    box-shadow: 0 0 0 0.2rem rgba(30, 215, 96, 0.25);
+  }
+}
+
 .navbar {
   background-color: $navbar-bg;
   color: $navbar-invert;
@@ -37,22 +47,12 @@ $main-link-hover: $green;
     }
   }
   .form-control {
+    @extend .green-glow;
     color: $navbar-invert;
     background-color: transparent;
-    &:focus {
-      border-color: $navbar-link-invert;
-      box-shadow: 0 0 0 0.2rem rgba(30, 215, 96, 0.25);
-    }
   }
   .btn-outline-success {
     @extend .custom-btn;
-    //color: $navbar-btn-color;
-    //border-color: $navbar-btn-color;
-    //&:hover {
-    //  color: $navbar-invert;
-    //  background-color: $navbar-btn-color;
-    //  border-color: $navbar-link-hover;
-    //}
   }
 }
 .content-wrapper {
@@ -75,7 +75,33 @@ $main-link-hover: $green;
     color: $main-subtext-invert;
   }
 }
-.swal-button--confirm {
-  @extend .custom-btn;
-  border: 1px solid;
+//.swal-button--confirm {
+//  @extend .custom-btn;
+//  border: 1px solid;
+//}
+.modal {
+  .intl-tel-input {
+    width: 100%;
+    .form-control {
+      @extend .green-glow;
+    }
+  }
+}
+.modal {
+    text-align: center;
+
+    &:before {
+      content: '';
+      height: 100%;
+      width: 1px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .modal-dialog {
+      text-align: left;
+      margin: 10px auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
 }
