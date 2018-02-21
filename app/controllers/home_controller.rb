@@ -7,10 +7,8 @@ class HomeController < ApplicationController
       @track = service.result
       send_msg
     else
-      @err_msg = @track.errors.dig(:spotify, 0)
+      @err_msg = service.errors.dig(:spotify, 0)
     end
-    # @track = SpotifyTrackService.call(query: params[:artist_name])
-    # send_msg if @track
   end
 
   private

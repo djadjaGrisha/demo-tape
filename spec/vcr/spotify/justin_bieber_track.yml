@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=Justin%20Bieber&type=artist
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.0p0
+      Authorization:
+      - Bearer BQC2z9ZkeeHyoK7UtpM2-lbNOUbF15uPYHVTMF2RwlDJbPD0V6TYioWk4ANFaoFtkn37lAs7fWMr73sunnE
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 20 Feb 2018 23:58:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2112'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type, Retry-After
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Tue, 20 Feb 2018 23:58:47 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s/top-tracks?country=US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.0p0
+      Authorization:
+      - Bearer BQC2z9ZkeeHyoK7UtpM2-lbNOUbF15uPYHVTMF2RwlDJbPD0V6TYioWk4ANFaoFtkn37lAs7fWMr73sunnE
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 20 Feb 2018 23:58:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2436'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type, Retry-After
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Tue, 20 Feb 2018 23:58:49 GMT
+recorded_with: VCR 4.0.0

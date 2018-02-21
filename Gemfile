@@ -48,6 +48,7 @@ group :development, :test do
   gem 'pry-nav', '~> 0.2.4'
   gem 'pry-rails', '~> 0.3.6'
   # gem 'selenium-webdriver'
+  gem 'vcr'
 end
 
 group :development do
@@ -63,8 +64,9 @@ group :test do
   gem 'capybara', '~> 2.17'
   # gem 'capybara-webkit', '~> 1.1.0'
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
-  gem 'faker', '~> 1.7.3'
+  # gem 'faker', '~> 1.7.3'
   # gem 'rack_session_access', '~> 0.1.1'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
   gem 'simplecov', '~> 0.14.1'
